@@ -1,0 +1,20 @@
+<template>
+    <lightning-card  title="Conditional rendering based on an event trigger">
+        
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input 
+                type="text" 
+                name="title" 
+                label="Enter your name" 
+                onkeyup={changeHandler} value={inputText}>
+            </lightning-input>
+        </div>
+        <template if:true={checkText}>
+            <h3> Hello Salesforce Worldvfdvd!</h3>
+
+        </template>
+
+
+
+    </lightning-card>
+</template>
