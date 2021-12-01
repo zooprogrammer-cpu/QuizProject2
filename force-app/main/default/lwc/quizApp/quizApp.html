@@ -31,17 +31,16 @@
             label="Submit"
             title="Submit Quiz"
             class="slds-m-around_small"
-            onclick={submitHandler}> 
-            </lightning-button>
-            
+            disabled={allNotSelected}
+            onclick={submitHandler}></lightning-button>
+
             <lightning-button 
             variant ="brand" 
             type="reset" 
             label="Reset"
             title="Reset Quiz"
             class="slds-m-around_small"
-            onclick={resetHandler}>
-            </lightning-button>
+            onclick={resetHandler}></lightning-button>
 
         </form>               
     
