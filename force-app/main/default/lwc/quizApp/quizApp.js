@@ -39,7 +39,8 @@ export default class QuizApp extends LightningElement {
 
     get allNotSelected(){
         return !(Object.keys(this.selected).length === this.myQuestions.length)
-        //disables the button unless a selection is made
+        //2==3 is false, returns true as allNotSelected. 
+        //In HTML file, for the submit buttondisabled={allNotSelected}
     }
     changeHandler(event){
         console.log("name",event.target.name)
