@@ -44,6 +44,11 @@ export default class QuizApp extends LightningElement {
         //2==3 is false, returns true as allNotSelected. 
         //In HTML file, for the submit buttondisabled={allNotSelected}
     }
+
+    get isScoredFull(){
+        return `slds-text-heading_large ${this.myQuestions.length === this.correctAnswers?
+        'slds-text-color_success':'slds-text-color_error'}`
+    }
     changeHandler(event){
         console.log("name",event.target.name)
         console.log("value",event.target.value)
