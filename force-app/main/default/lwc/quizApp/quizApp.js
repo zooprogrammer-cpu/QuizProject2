@@ -44,11 +44,12 @@ export default class QuizApp extends LightningElement {
         //2==3 is false, returns true as allNotSelected. 
         //In HTML file, for the submit buttondisabled={allNotSelected}
     }
-
+    // for applying dynamic styling to our result
     get isScoredFull(){
         return `slds-text-heading_large ${this.myQuestions.length === this.correctAnswers?
         'slds-text-color_success':'slds-text-color_error'}`
     }
+    //chnageHandler gets called on every click on he options
     changeHandler(event){
         console.log("name",event.target.name)
         console.log("value",event.target.value)
@@ -73,9 +74,10 @@ export default class QuizApp extends LightningElement {
         //filter returns the item  if the expression is true
         console.log("this.correctAnswers",this.correctAnswers)
     }
-
+//form reset handler
     resetHandler(){
         this.selected ={}
         this.correctAnswers= 0
+        this.isSumitted = false
     }
 }
