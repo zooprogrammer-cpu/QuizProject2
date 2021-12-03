@@ -3,6 +3,7 @@ import { LightningElement } from 'lwc';
 export default class QuizApp extends LightningElement {
 
     selected={} //for storing answers
+    correctAnswers = 0// to show the result
     myQuestions=[
         {
             id: "Question1",
@@ -54,11 +55,20 @@ export default class QuizApp extends LightningElement {
         // inside the property and name is key and store the value along the name property
         // in the backend -> this.selected={"Question 1":"a"} 
     }
-    submitHandler(){
-
+    //whever we click on the submit button it will receve an event
+    // and since this submit button is inside a form, it always refreshes the page
+    submitHandler(event){  
+        //event.preventDefault() //To prevent the submit button refreshing the page
+        //this.selected ={"Question1":"a","Question2":"b","Question3":"c"}
+        console.log("Is this working");
+        let correct= this.myQuestions.filter(item=>this.selected[item.id] === item.correctAnswer)//item.id is a
+        this.correctAnswers=correct.length
+        //filter returns the item  if the expression is true
+        console.log("this.correctAnswers",this.correctAnswers)
     }
 
     resetHandler(){
-
+        this.selected ={}
+        this.correctAnswers= 0
     }
 }
