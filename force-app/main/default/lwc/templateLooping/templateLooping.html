@@ -7,7 +7,10 @@
         <div class ="slds-var-m-around_medium">
             <template for:each ={carList} for:item="car">
                 <!-- Here is the repeatable template -->
-                <div key={car}>{car}</div>
+                <ul key={car} class="slds-has-dividers_around-space">
+                    <li class="slds-item">{car}</li>
+                    
+                </ul>
         
             </template>         
         </div>
