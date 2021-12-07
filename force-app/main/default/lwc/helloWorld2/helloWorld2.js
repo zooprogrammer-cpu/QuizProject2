@@ -6,4 +6,9 @@ export default class HelloWorld2 extends LightningElement {
     handleClick(){
         this.isVisible=true
     }
+
+    //form reset handler
+    resetHandler(){
+        this.isVisible=false
+    }
 }
